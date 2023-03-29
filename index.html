@@ -1,0 +1,2506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+    
+    <title>WE-Learn</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg ml-auto fixed-top" id="navbarbg" >
+
+                   
+    <div class="navbar-brand">
+        <a class="navbar-brand fw-bold fs-2" href="#"><img src="image/logo2.png" width="50">W<span class="text-warning">E</span>-L<span class="text-warning">e</span>arn</a>
+    </div>
+
+   
+  
+      <ul class="navbar-nav ml-auto  ms-auto fw-bold">
+  
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                              </button>
+          
+  
+  
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <li class="nav-link" href="#">
+                <a class="nav-link" href="#about" >About</a>
+            </li>
+
+            <li class="nav-link" href="#">
+                <a class="nav-link" href="#categories" >Categories</a>
+            </li>
+
+
+            <li class="nav-link" href="#">
+                <a class="nav-link" href="#popular" >Popular Courses</a>
+            </li>
+
+            <li class="nav-link" href="#">
+                <a class="nav-link" href="#" >Forum</a>
+            </li>
+
+            <li class="nav-link" href="#">
+                <a class="nav-link" href="#contact" >Contact Us</a>
+            </li>
+          
+              
+       
+          
+
+           </div>
+  </ul>
+
+   <!--  MODAL -->
+                
+   <button type="button" id="carticon" class="btn btn-none cart-button m-0 p-0" data-bs-toggle="modal" data-bs-target="#myModal">
+                      <img src="image/icons8-cart-64.png" width="50%">
+                      <span class="badge" id="badge">0</span>
+                      </button>
+
+                          <div class="modal" id="myModal">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h4 class="modal-title">Your Cart</h4>    
+                                  </div>
+                                
+                                  <div class="modal-body">
+                                      <div class="table-responsive">
+                                        <table class="table table-striped">
+                                        <thead >
+                                      <tr >
+                                        <th >Image</th>
+                                        <th >Title</th>
+                                  
+                                        <th class="d-xs-none">Price</th>
+                                      </tr>
+                                    </thead>
+                                    <tfoot>
+                                      <tr>
+                                        <td colspan="3"></td>
+                                        <td id="cart-total" class="d-flex text-center">Total: <span id="total-amount"></span></td>
+                                      </tr>
+                                    <tbody id="cart-table-body">
+                                    </tbody>
+                                    </table>
+                                  </div>
+                            </div>
+                          
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" onclick="clickAlert()">Proceed to Checkout</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+     
+  
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+          
+                     <!--  MODAL -->
+                  
+</nav>
+
+   
+  <section  class=" text-dark text-center my-5 pt-3" id="section">
+    <div class="container">
+      
+      <div class="row text-center my-5 pt-5">
+
+        <div class="col-md my-5 d-flex  mx-auto" id="reg">
+          
+          <div class="login-form rounded d-flex mx-auto shadow">
+            
+            
+            <form action="" method="POST" id="login-form">
+              <h2 class="fw-bold">Log in</h2>
+              <div id="login-error-msg-holder">
+                <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+              </div>
+              <input type="text" class="login-form-field" name="username" id="username-field" required value="" placeholder="Username/Email">
+              <input type="password" class="login-form-field" name="password" id="password-field" required value="" placeholder="Password">
+              <button class="btn btn-warning" id="login-form-submit">Log in</button><br><br>
+              <p>Don't have an account yet?<br>
+                <button class="button-reg" data-bs-toggle="modal" data-bs-target="#modalregister">Register Now!</button>
+                
+            </form>
+            
+          </div>
+          
+   
+      </div>
+      
+      <div class="col-md my-5">
+
+        <div class="heading">
+                  <h1 class="fw-bold display-1">W<span class="text-warning">E</span>-L<span class="text-warning">e</span>arn</h1>
+                  <h5 class="fw-bold">Learn Today Earn Tomorrow</5><br>
+                  <a href="#about" class="btn btn-lg btn-outline-warning my-2 rounded-pill" id="get-started">Get Started</a>
+         </div>
+      </div>
+   
+    </div>
+
+    
+    </div>
+      
+
+
+  </section>
+  <!------------------------------ Modal for Register ------------------------------------->
+  <!-- The Modal -->
+  <div class="modal fade" id="modalregister">
+      <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+      
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h3 class="modal-title fw-bold text-center" id="titlefont">Registration</h3><br><br>
+              </div>
+      
+              <!-- Modal body -->
+              <div class="modal-body">
+                <form class="needs-validation mx-2" novalidate>
+                  <div class="form-group-lg fs-5 py-1">
+                      <label for="name">First Name</label>
+                      <input type="text" class="form-control" id="fname" aria-describedby="name" required/>
+                      <div class="valid-feedback">Valid</div>
+                      <div class="invalid-feedback "></div>
+                  </div>
+                  <div class="form-group-lg fs-5 py-1">
+                    <label for="name">Last Name</label>
+                    <input type="text" class="form-control" id="lname" aria-describedby="name" required/>
+                    <div class="valid-feedback">Valid</div>
+                    <div class="invalid-feedback "></div>
+                </div>
+                  <div class="form-group-lg fs-5 py-1">
+                      <label for="email">Email:</label>
+                      <input type="email" class="form-control" id="email" aria-describedby="email" required/>
+                      <div class="valid-feedback">Valid</div>
+                      <div class="invalid-feedback">Invalid Email</div>
+                  </div>
+                  <div class="form-group-lg fs-5 py-1">
+                    <label for="name">Username</label>
+                    <input type="text" class="form-control" id="uname" aria-describedby="name" required/>
+                    <div class="valid-feedback">Valid</div>
+                    <div class="invalid-feedback "></div>
+                </div>
+                <div class="form-group-lg fs-5 py-1">
+                  <label for="name">Password</label>
+                  <input type="password" class="form-control" id="password" aria-describedby="name" required/>
+                  <div class="valid-feedback">Valid</div>
+                  <div class="invalid-feedback "></div>
+              </div>
+              </form>
+              </div>
+      
+              <!-- Modal footer -->
+              <div class="modal-footer">
+
+                <div class="d-flex justify-content-center  ">
+                  <button type="submit" class="button btn-primary px-4 " id="subscribebtn" data-bs-dismiss="modal" >Register</button>
+              </div>
+
+              <div class="d-flex justify-content-center">
+                  <button type="button" class="btn px-3 " id="cancelbtn" data-bs-dismiss="modal">Cancel</button>
+              </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+ 
+  <div class="container rounded shadow my-5 text-center" id="whole-container"> 
+
+  <section class="reveal">
+                    <div class="container">
+                        <div class="row">
+                      <h2 class="fw-bold my-5">Success by Numbers</h2>
+                            <div class="col-md rounded shadow-sm">
+                            <img src="image/education.png" width="50px" class="img-fluid">
+                          <div class="counter-info">
+                         <h1 class="counter" data-count="15000000">0</h1>
+                           <p>Student Graduates</p>
+                          </div>
+                            </div>
+
+                            <div class="col-md rounded shadow-sm">
+                            <img src="image/project.png" width="50px" class="img-fluid">
+                            <div class="counter-info">
+                            <h1 class="counter" data-count="14500000">0</h1>
+                            <p>Landed a job after Graduating</p>
+                            </div>
+                            </div>
+
+                            <div class="col-md rounded shadow-sm">
+                            <img src="image/infinity.png" width="50px" class="img-fluid">
+                              <div class="counter-info">
+                              <h1 class="counter" data-count="99999999999">0</h1>
+                              <p>Lets count our success</p>
+                              </div>                            
+                           </div>
+
+                        
+                        </div>
+                    </div>
+  </section>
+
+
+
+
+
+
+  <section>
+    <div class="container reveal  my-5 py-2 text-center">
+      <h2 class="display-5 my-5 py-5 fw-bold text-center" id="about"><i>About</i></h2>
+                    <img src="image/WE-Learn Logo3.gif" class="img-fluid">
+                    <br><br><br>
+                    <div class="row">
+                      <div class="col-md-2"></div>
+                      <div class="col-md-8 my-5">
+                        
+                        <h2>Improving lives through learning</h2><br>
+                        <p>Whether you want to learn or to share what you know, you've come to the right place.
+                          As a global destination for online learning, we connect people through knowledge.
+                        </p><br><br><br>
+                        <article id="vision" class="bg-warning p-5">
+                          <h1 class="text-start">OUR VISION</h1><br>
+                        <p class="fs-5">We envision a world where everyone can
+                          <span class="fw-bold">Learn</span> and <span class="fw-bold">Earn</span> wherever and whenever. We
+                          provide flexible, comfortable, and cost-effective online courses.
+                        </p>
+                        </article>
+                      </div>
+                      <div class="col-md-2"></div>
+                    </div>
+    </div>
+  </section>
+
+  <section>
+			<div class="container-fluid reveal my-5 py-2 mx-1">
+					<h2 class="display-5 my-5 py-5 fw-bold text-center" id="categories"><i>Categories</i></h2>
+					<div class="row my-2">
+
+						<div class="col-md">
+								<div class="row">
+									<div class="col-md-2">
+									<img src="image/app-development.png" class="img fluid" width="55px">
+									</div>
+									<div class="col-md">
+									<h4>Web Development</h4>
+									<p class="text-muted">Learn to build websites and be a Front-End, Back-end, or Full-stack Web Developer with our Web Development courses.
+                  </p>
+									</div>
+								</div>
+						
+
+						</div>
+
+						<div class="col-md">
+								<div class="row">
+									<div class="col-md-2">
+									<img src="image/mobile-development.png" class="img fluid" width="55px">
+									</div>
+									<div class="col">
+									<h4>Mobile App Developer</h4>
+									<p class="text-muted">Learn to create software applications that
+                    run on a mobile device. When you have the skills, you can 
+                  execute your own app idea. </p>
+									</div>
+								</div>
+						
+
+						</div>
+
+					</div>
+
+								<div class="row my-2">
+
+						<div class="col-md">
+								<div class="row">
+									<div class="col-md-2">
+									<img src="image/vector.png" class="img fluid" width="55px">
+									</div>
+									<div class="col-md">
+										<h4>Graphic Design</h4>
+									<p class="text-muted">This is a great career for people who are creative 
+                    thinkers and enjoy art, technology, and communication. 
+                    Enhance your skills with our Graphic Design courses. </p>
+									
+									</div>
+								</div>
+						
+
+						</div>
+
+						<div class="col-md">
+								<div class="row">
+									<div class="col-md-2">
+									<img src="image/cyber-security.png" class="img fluid" width="55px">
+									</div>
+									<div class="col">
+									<h4>Cyber Security</h4>
+									<p class="text-muted">You can get into cyber security even if you don't 
+                    have a cyber degree or background. Here's the complete courses for 
+                    breaking into the cyber security industry.</p>
+									</div>
+								</div>
+						
+
+						</div>
+
+					</div>
+
+								<div class="row my-2">
+
+						<div class="col-md">
+								<div class="row">
+									<div class="col-md-2">
+									<img src="image/dashboard.png" class="img fluid" width="55px">
+									</div>
+									<div class="col-md">
+										<h4>Data Analytics</h4>
+									<p class="text-muted">These courses present you with a gentle introduction to 
+                    Data Analysis, the role of a Data Analyst, and the tools used in this job. </p>
+									
+									</div>
+								</div>
+						
+
+						</div>
+
+						<div class="col-md">
+								<div class="row">
+									<div class="col-md-2">
+									<img src="image/browser.png	" class="img fluid" width="55px">
+									</div>
+									<div class="col">
+									<h4>Search Engine Optimization</h4>
+									<p class="text-muted">Do you want to learn SEO but don't know where to start? 
+                    Learn everything you need to know here!</p>
+									</div>
+								</div>
+						
+
+						</div>
+
+					</div>
+					
+				</div>
+</section>
+
+    <section>
+      <div class="container-fluid  my-5 py-2" >
+                      <h2 class="display-5 my-5 py-5 fw-bold text-center" id="popular"><i>Popular Courses</i></h2>
+              <nav>
+                  <div class="nav nav-tabs"  id="nav-tab" role="tablist">
+                    <button class="nav-link active w-25" id="nav-week-tab" data-bs-toggle="tab" data-bs-target="#nav-week" type="button" role="tab" aria-controls="nav-week" aria-selected="true">Popular This Week</button>
+                    <button class="nav-link w-25" id="nav-most-tab" data-bs-toggle="tab" data-bs-target="#nav-most" type="button" role="tab" aria-controls="nav-most" aria-selected="false">Most Enrolled Course</button>
+                    <button class="nav-link w-25" id="nav-discounted-tab" data-bs-toggle="tab" data-bs-target="#nav-discounted" type="button" role="tab" aria-controls="nav-discounted" aria-selected="false">Discounted Price</button>
+                    <button class="nav-link w-25" id="nav-top-tab" data-bs-toggle="tab" data-bs-target="#nav-top" type="button" role="tab" aria-controls="nav-top" aria-selected="false">Top Rated</button>
+                  </div>
+                </nav>
+          <!--TAB BUTTON END-->
+            
+          <div class="container text-center">
+                <!--FIRST TAB CONTENT START-->
+                <div class="tab-content text-center" id="nav-tabContent ">
+                  <div class="tab-pane fade show active" id="nav-week" role="tabpanel" aria-labelledby="nav-week-tab">
+
+                        <div class="row text-center   my-5">
+
+
+                                        
+                                           <div class="col-md d-flex  my-2" >
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/reac.png" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">React JS</h5>
+                                                      <p class="card-text">In this course, you'll build...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush bg-none">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(5.0)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <span class="reviews text-dark">9999 Ratings</span>
+                                                          </div>
+                                                         
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body mx-auto">
+                                                     
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Introduction to what is React and its basic concepts</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Learn what are the stateful and stateless components and when to use them</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Working with React Modules, importing and exporting the modules
+
+                                                                </p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> React component lifecycle and different lifecycle methods</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Working with function based and class based components</p>
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                   
+
+
+
+                  
+                                        <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/angular.jpg" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">Angular</h5>
+                                                      <p class="card-text">In this course, you'll learn...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                     
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(4.5)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                                            <span class="reviews  text-dark">9999 Ratings</span>
+                                                          </div>
+                                                    
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body mx-auto">
+                                                     
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart" id="cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Develop modern, complex, responsive and scalable web applications with Angular 14</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Use the gained, deep understanding of the Angular fundamentals to quickly establish yourself as a frontend developer</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Fully understand the architecture behind an Angular application and how to use it
+
+                                                                </p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Create single-page applications with one of the most modern JavaScript frameworks out there</p>
+                                                                
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                       
+                                        <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/bootstrap.png" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">Bootstrap</h5>
+                                                      <p class="card-text">In this course, you'll learn...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(4.5)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                                            <span class="reviews text-dark">9999 Ratings</span>
+                                                          </div>
+                                                         
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                        
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> You will learn to Build customized Bootstrap 5 Web Apps</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> You will learn how to use Bootstrap 5 Containers</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> You will learn to create responsive images, tables and typography
+
+                                                                </p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> You will learn all the Bootstrap 5 components like, Badge, Breadcrumb, Buttons, Button group, Card, and much more</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> You will learn to create customized Bootstrap 5 Forms.</p>
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+
+                    
+                                        <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/javasccript.png" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">JavaScript</h5>
+                                                      <p class="card-text">In this course, you'll know...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(5.0))</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <span class="reviews text-dark">9999 Ratings</span>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Become an advanced, confident, and modern JavaScript developer from scratch</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> JavaScript fundamentals: variables, if/else, operators, boolean logic, functions, arrays, objects, loops, strings, etc.</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Asynchronous JavaScript: Event loop, promises, async/await, AJAX calls and APIs
+
+                                                                </p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i>How to think and work like a developer: problem-solving, researching, workflows</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> How to architect your code using flowcharts and common patterns</p>
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                        </div>
+                  </div>
+                </div>
+                    <!--FIRST TAB CONTENT END-->
+                
+                <!--SECOND TAB CONTENT START-->
+                  <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-most" role="tabpanel" aria-labelledby="nav-most-tab">
+                              <div class="row text-center  my-5">
+
+                  
+                              <div class="col-md  d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/reac.png" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">React JS</h5>
+                                                      <p class="card-text">In this course, you'll learn...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(5.0)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <span class="reviews text-dark">9999 Ratings</span>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                                                      
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Introduction to what is React and its basic concepts</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Learn what are the stateful and stateless components and when to use them</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Working with React Modules, importing and exporting the modules
+
+                                                              </p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> React component lifecycle and different lifecycle methods</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Working with function based and class based components</p>
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                   
+                                        <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/android.png" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">Android Developer</h5>
+                                                      <p class="card-text">In this course, you'll build...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(5.0)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <span class="reviews  text-dark">9999 Ratings</span>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                                                   
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Learn Android App Development from Zero to Hero</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Master the Basics, Intermediate and Advanced topic and programming skills</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Building real apps and publish them to playstore
+
+                                                                </p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Become a professional Native app developer</p>
+                                                               
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+               
+                                        <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/seo.jpg" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h6 class="card-title">Search Engine Optimization</h6>
+                                                      <p class="card-text">In this course, you'll know...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(4.5)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                                            <span class="reviews  text-dark">9999 Ratings</span>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                                                      
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Complete SEO training from an industry veteran with over 16 years experience</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> An in-depth understanding of how search engines crawl, render and index websites</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Best practise technical SEO so search engine can easily discover, understand and rank your pages
+
+                                                                </p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> The modern strategies and tactics being used by big agencies and winning websites</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i>In-depth keyword research tools and techniques to discover new opportunities</p>
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+
+                     
+                                        <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/remote.jpeg" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">Cyber Security</h5>
+                                                      <p class="card-text">In this course, you'll learn...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a></p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(4.5)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                                            <span class="reviews  text-dark">9999 Ratings</span>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                                                      
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Explore the threat landscape - Darknets, dark markets, zero day vulnerabilities, exploit kits, malware, phishing and much more.</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Start a career in cyber security. Become a cyber security specialist.</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> We cover operating system security, privacy, and patching - On Windows 7, Windows 8, Windows 10, MacOS and Linux.
+
+                                                                </p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> You will master encryption in an easy to follow crash course.</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> You will learn about nation state secret tracking and hacking infrastructure.</p>
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                        </div>
+                  </div>
+                </div>
+                <!--Second tab content end-->
+
+
+                <!--THIRD tab content start-->
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-discounted" role="tabpanel" aria-labelledby="nav-discounted-tab">
+                              <div class="row text-center  my-5">
+
+                              <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/science.jpg" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">Data Science</h5>
+                                                      <p class="card-text">In this course, you'll get...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(4.5)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                                            <span class="reviews  text-dark">9999 Ratings</span>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                                                  
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> The course provides the entire toolbox you need to become a data scientist</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Understand the mathematics behind Machine Learning (an absolute must which other courses don’t teach!)</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Perform linear and logistic regressions in Python
+
+                                                                </p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Learn how to pre-process data</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Carry out cluster and factor analysis</p>
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                  
+                                        <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/vul.jpg" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h6 class="card-title">Vulnerability Management</h6>
+                                                      <p class="card-text">In this course, you'll know...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(5.0)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <span class="reviews  text-dark">9999 Ratings</span>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                                                     
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Assessment of vulnerabilities in specific environments</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Understand the multiple frameworks associated with government and private industry infrastructures</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Process of Vulnerability Management with different enterprise infrastructures
+
+                                                                </p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Qualitative Management</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Risk Management Framework</p>
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                   
+                                        <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/ios.png" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">iOs Developer</h5>
+                                                      <p class="card-text">In this course, you'll build...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(5.0)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <span class="reviews  text-dark">9999 Ratings</span>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                                                    
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> You will create a portfolio of 15 apps to be able apply for junior developer jobs at a technology company</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> You will learn by doing, where every lesson is incorporated into a real-world app project.</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Start your own app based business
+
+                                                                </p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> Master creating Augmented Reality apps using Apple's new ARKit</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i>Master app design so you'll know how to wireframe, mockup and prototype your app idea</p>
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+
+                      
+                                        <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/angular.jpg" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">Angular</h5>
+                                                      <p class="card-text">In this course, you'll get...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(4.5)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                                            <span class="reviews  text-dark">9999 Ratings</span>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                                                      
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Develop modern, complex, responsive and scalable web applications with Angular 14</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Use the gained, deep understanding of the Angular fundamentals to quickly establish yourself as a frontend developer</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Fully understand the architecture behind an Angular application and how to use it
+
+                                                              </p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Create single-page applications with one of the most modern JavaScript frameworks out there</p>
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                        </div>
+                  </div>
+                </div>
+                <!--Third tab content ent-->
+
+                <!--Fourth tab content start-->
+            <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-top" role="tabpanel" aria-labelledby="nav-top-tab">
+                              <div class="row text-center  my-5">
+
+                     
+                              <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/reac.png" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">React JS</h5>
+                                                      <p class="card-text">In this course, you'll build...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(5.0)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <span class="reviews  text-dark">9999 Ratings</span>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                                            
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Introduction to what is React and its basic concepts</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Learn what are the stateful and stateless components and when to use them</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Working with React Modules, importing and exporting the modules
+
+                                                              </p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> React component lifecycle and different lifecycle methods</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Working with function based and class based components</p>
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                 
+                                        <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/javasccript.png" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">JavaScript</h5>
+                                                      <p class="card-text">In this course, you'll learn...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(5.0)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <span class="reviews  text-dark">9999 Ratings</span>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                                                     
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Become an advanced, confident, and modern JavaScript developer from scratch</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> JavaScript fundamentals: variables, if/else, operators, boolean logic, functions, arrays, objects, loops, strings, etc.</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Asynchronous JavaScript: Event loop, promises, async/await, AJAX calls and APIs
+
+                                                              </p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i>How to think and work like a developer: problem-solving, researching, workflows</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> How to architect your code using flowcharts and common patterns</p>
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                    
+                                        <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/hybrid.webp" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">Hybrid App Developer</h5>
+                                                      <p class="card-text">In this course, you'll build...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(4.5)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                                            <span class="reviews  text-dark">9999 Ratings</span>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                                                     
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> You're taught step by step HOW to build Android 7 apps for Google's Nougat platform that will work on older Android versions.</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> You'll have EXPERT LEVEL knowledge of the Java programming language and know exactly how each process of Android Nougat development works.</p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> With each comprehensive step, the WHY you're doing it is explained.
+
+                                                                </p>
+                                                                <p><i class="fa fa-check" aria-hidden="true"></i> The course is continually UPDATED, so you'll learn the very latest as Android Nougat evolves.</p>
+                                                                
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+
+                   
+                                        <div class="col-md d-flex my-2">
+                                                  <div class="card shadow" style="width: 18rem; height: 28rem;">
+                                                    <img src="image/seo.jpg" class="card-img-top" alt="..." >
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">Search Engine Optimization</h5>
+                                                      <p class="card-text">In this course, you'll learn...<br>
+                                                        <a class="" data-bs-toggle="modal" data-bs-target="#detailsModal">See details</a>
+                                                      </p>
+                                                      <h6 class="card-price">Price:1000</h6>
+                                                      <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item text-warning">
+                                                          <div class="course-rating">
+                                                            <span class="average-rating">(4.5)</span>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                                            <span class="reviews text-dark">9999 Ratings</span>
+                                                          </div>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="card-body">
+                                                  
+                                                      <button type="button" id="btncourse" class="btn card-link add-to-cart">Add to Cart</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="detailsModalLabel">Full Details</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <!--COURSE DETAILS -->
+
+                                              <div class="container text-start">
+                                                            <h4 class="my-3">This Course Include:</h4>
+                                                    <div class="course-include">
+                                                        <ol class="list">
+                                                                <li class="text-muted"> <i class="fa-solid fa-clock"> &nbsp;</i>52 Hours Video</li>
+                                                                <li class="text-muted"> <i class="fas fa-newspaper"></i> &nbsp; 75 Articles</li>
+                                                                <li class="text-muted">  <i class="fa-solid fa-download"></i>&nbsp; Downloadable Resources</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-infinity"></i> &nbsp; LifeTime Access</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-universal-access"></i> &nbsp; Access Everywhere</li>
+                                                                <li class="text-muted"> <i class="fas fa-tasks"></i> &nbsp; Assignments</li>
+                                                                <li class="text-muted"> <i class="fas fa-project-diagram"></i> &nbsp; Projects</li>
+                                                                <li class="text-muted"> <i class="fa-solid fa-certificate"></i> &nbsp;Certificate Upon Completion</li>
+
+                                                                
+                                                                
+                                                                                </ol>
+                                                                            </div>
+
+                                                              <h4>What You'll Learn</h4>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Complete SEO training from an industry veteran with over 16 years experience</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> An in-depth understanding of how search engines crawl, render and index websites</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> Best practise technical SEO so search engine can easily discover, understand and rank your pages
+
+                                                              </p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i> The modern strategies and tactics being used by big agencies and winning websites</p>
+                                                              <p><i class="fa fa-check" aria-hidden="true"></i>In-depth keyword research tools and techniques to discover new opportunities</p>
+                                                    </div>
+
+                                                  
+
+                                                <!--COURSE DETAILS -->
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                        </div>
+                  </div>
+                </div>
+                <!--Fourth tab content start-->.
+                </div>
+      </div>   
+    </section>
+
+
+    <!--feedback section -->
+    <section class="my-5 reveal py-2" id="testimonials">
+      <div class="container-fluid reveal" >
+          <h2 class="display-5 my-5 py-5 fw-bold text-center"><i>Testimonials</i></h2>
+
+          
+            <div class="slide-container swiper">
+                <div class="slide-content">
+                    <div class="card-wrapper swiper-wrapper">
+    
+                        <div class="cardreview swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="cardreview-image">
+                                    <img src="image/s1.png" alt="" class="cardreview-img">
+                                </div>
+                            </div>
+                            <div class="cardreview-content">
+                                <h2 class="name">Jamie D.</h2>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="description">It was fun. I really learned a lot. But there was a part that I just couldn't keep up with the pace even though I managed. All in all, it was a good experience and I learned a lot.</p>
+                                
+                                <button class="button" data-bs-toggle="modal" data-bs-target="#modalreview1">View more</button>
+                            
+                                
+                              </div>
+                        </div>
+    
+                        <div class="cardreview swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="cardreview-image">
+                                    <img src="image/s2.png" alt="" class="cardreview-img">
+                                </div>
+                            </div>
+                            <div class="cardreview-content">
+                                <h2 class="name">John H.</h2>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="description">It was great experience overall learning this course...I enjoyed it and got to learn so many things as well...</p>
+    
+                                <button class="button" data-bs-toggle="modal" data-bs-target="#modalreview2">View more</button>
+                            </div>
+                        </div>
+    
+                        <div class="cardreview swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="cardreview-image">
+                                    <img src="image/s3.png" alt="" class="cardreview-img">
+                                </div>
+                            </div>
+                            <div class="cardreview-content">
+                                <h2 class="name">Maan L.</h2>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="description">Well your teaching qualities were immense and help me wrap my brain around python. But I cannot inform people to take this course as for a major reason
+
+                                  in those beautiful soup parsing which was exciting the website and data change causing you to be on the wrong foot but still amazing course.</p>
+    
+                                <button class="button" data-bs-toggle="modal" data-bs-target="#modalreview3">View more</button>
+                            </div>
+                        </div>
+    
+                        <div class="cardreview swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="cardreview-image">
+                                    <img src="image/s4.png" alt="" class="cardreview-img">
+                                </div>
+                            </div>
+                            <div class="cardreview-content">
+                                <h2 class="name">Alex N.</h2>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="description">it was a good experiance to learning bootstrap in this platform. thank you</p>
+    
+                                <button class="button" data-bs-toggle="modal" data-bs-target="#modalreview4">View more</button>
+                            </div>
+                        </div>
+    
+                        <div class="cardreview swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="cardreview-image">
+                                    <img src="image/s5.png" alt="" class="cardreview-img">
+                                </div>
+                            </div>
+                            <div class="cardreview-content">
+                                <h2 class="name">Czar L.</h2>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="description">I am really enjoying the sessions. Great way to educate people about JavaScript. The only thing I am looking for is the email id of the trainer so that I can share my issues with him by email....</p>
+    
+                                <button class="button" data-bs-toggle="modal" data-bs-target="#modalreview5">View more</button>
+                            </div>
+                        </div>
+    
+                        <div class="cardreview swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="cardreview-image">
+                                    <img src="image/s6.png" alt="" class="cardreview-img">
+                                </div>
+                            </div>
+                            <div class="cardreview-content">
+                                <h2 class="name">Shaila O.</h2>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="description">course is well above expected. there are so many interesting things to learn, we get to learn right from basic to advanced. I had no prior knowledge about angular js when I started with the course, but now I am understanding the things very well.</p>
+    
+                                <button class="button" data-bs-toggle="modal" data-bs-target="#modalreview6">View more</button>
+                            </div>
+                        </div>
+    
+                        
+                    </div>
+                </div>
+                <div class="swiper-button-next swiper-navBtn"></div>
+                <div class="swiper-button-prev swiper-navBtn"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        
+              
+                          
+      </div>
+</section>
+
+
+        <!----------------------------Modal for Review1 ------------------------------>
+    <!-- The Modal -->
+    <div class="modal fade" id="modalreview1">
+      <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+      
+              <!-- Modal Header -->
+              <div class="modal-header">
+                  <div class="row">
+                      <div class="col-7">
+                          <div class="card-image">
+                              <img src="image/s1.png" alt="" class="card-img">
+                          </div>
+                      </div>
+                      <div class="col pt-4">
+                          <div class="row pb-3">
+                              <h3 class="modal-title" id="titlefont">Jamie D.</h3>
+                          </div>
+                          <div class="row py-2">
+                              <div class="rating ">
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                              </div>
+                          </div>
+                          <div class="row py-1">
+                              <p class="modal-subtile float-end">12/22/2022</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Modal body -->
+              <div class="modal-body">
+                  <div class="row">
+                      
+                      <div class="col">
+                          <h3>React JS</h3>
+                          <p>It was fun. I really learned a lot. But there was a part that I just couldn't keep up with the pace even though I managed. All in all, it was a good experience and I learned a lot.</p>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Modal footer -->
+              <div class="modal-footer">
+
+                  <div class="d-flex justify-content-center">
+                      <button type="button" class="close px-3 " id="cancelbtn" data-bs-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!----------------------------Modal for Review2 ------------------------------>
+  <!-- The Modal -->
+  <div class="modal fade" id="modalreview2">
+      <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+      
+              <!-- Modal Header -->
+              <div class="modal-header">
+                  <div class="row">
+                      <div class="col-7">
+                          <div class="card-image">
+                              <img src="image/s2.png" alt="" class="card-img">
+                          </div>
+                      </div>
+                      <div class="col pt-4">
+                          <div class="row pb-3">
+                              <h3 class="modal-title" id="titlefont">John H.</h3>
+                          </div>
+                          <div class="row py-2">
+                              <div class="rating ">
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                              </div>
+                          </div>
+                          <div class="row py-1">
+                              <p class="modal-subtile float-end">12/20/2022</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Modal body -->
+              <div class="modal-body">
+                  <div class="row">
+                    
+                      <div class="col">
+                          <h3>iOs Developer</h3>
+                          <p>It was great experience overall learning this course...I enjoyed it and got to learn so many things as well...</p>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Modal footer -->
+              <div class="modal-footer">
+
+                  <div class="d-flex justify-content-center">
+                      <button type="button" class="close px-3 " id="cancelbtn" data-bs-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!----------------------------Modal for Review3 ------------------------------>
+  <!-- The Modal -->
+  <div class="modal fade" id="modalreview3">
+      <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+      
+              <!-- Modal Header -->
+              <div class="modal-header">
+                  <div class="row">
+                      <div class="col-7">
+                          <div class="card-image">
+                              <img src="image/s3.png" alt="" class="card-img">
+                          </div>
+                      </div>
+                      <div class="col pt-4">
+                          <div class="row pb-3">
+                              <h3 class="modal-title" id="titlefont">Maan L.</h3>
+                          </div>
+                          <div class="row py-2">
+                              <div class="rating ">
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                              </div>
+                          </div>
+                          <div class="row py-1">
+                              <p class="modal-subtile float-end">1/12/2023</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Modal body -->
+              <div class="modal-body">
+                  <div class="row">
+                      
+                      <div class="col">
+                          <h3>Javascript</h3>
+                          <p>Well your teaching qualities were immense and help me wrap my brain around Javascript. But I cannot inform people to take this course as for a major reason
+
+                                  in those beautiful soup parsing which was exciting the website and data change causing you to be on the wrong foot but still amazing course.</p>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Modal footer -->
+              <div class="modal-footer">
+
+                  <div class="d-flex justify-content-center">
+                      <button type="button" class="close px-3 " id="cancelbtn" data-bs-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!----------------------------Modal for Review4 ------------------------------>
+  <!-- The Modal -->
+  <div class="modal fade" id="modalreview4">
+      <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+      
+              <!-- Modal Header -->
+              <div class="modal-header">
+                  <div class="row">
+                      <div class="col-7">
+                          <div class="card-image">
+                              <img src="image/s4.png" alt="" class="card-img">
+                          </div>
+                      </div>
+                      <div class="col pt-4">
+                          <div class="row pb-3">
+                              <h3 class="modal-title" id="titlefont">Alex N.</h3>
+                          </div>
+                          <div class="row py-2">
+                              <div class="rating ">
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                              </div>
+                          </div>
+                          <div class="row py-1">
+                              <p class="modal-subtile float-end">2/18/2023</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Modal body -->
+              <div class="modal-body">
+                  <div class="row">
+                      
+                      <div class="col">
+                        <h3>Bootstrap</h3>
+                          <p>it was a good experiance to learning bootstrap in this platform. thank you</p>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Modal footer -->
+              <div class="modal-footer">
+
+                  <div class="d-flex justify-content-center">
+                      <button type="button" class="close px-3 " id="cancelbtn" data-bs-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!----------------------------Modal for Review5 ------------------------------>
+  <!-- The Modal -->
+  <div class="modal fade" id="modalreview5">
+      <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+      
+              <!-- Modal Header -->
+              <div class="modal-header">
+                  <div class="row">
+                      <div class="col-7">
+                          <div class="card-image">
+                              <img src="image/s5.png" alt="" class="card-img">
+                          </div>
+                      </div>
+                      <div class="col pt-4">
+                          <div class="row pb-3">
+                              <h3 class="modal-title" id="titlefont">Czar L.</h3>
+                          </div>
+                          <div class="row py-2">
+                              <div class="rating ">
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                              </div>
+                          </div>
+                          <div class="row py-1">
+                              <p class="modal-subtile float-end">2/22/2023</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Modal body -->
+              <div class="modal-body">
+                  <div class="row">
+                      
+                      <div class="col">
+                        <h3>Angular</h3>
+                          <p>I am really enjoying the sessions. Great way to educate people about Angular. The only thing I am looking for is the email id of the trainer so that I can share my issues with him by email....</p>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Modal footer -->
+              <div class="modal-footer">
+
+                  <div class="d-flex justify-content-center">
+                      <button type="button" class="close px-3 " id="cancelbtn" data-bs-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!----------------------------Modal for Review6 ------------------------------>
+  <!-- The Modal -->
+  <div class="modal fade" id="modalreview6">
+      <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+      
+              <!-- Modal Header -->
+              <div class="modal-header">
+                  <div class="row">
+                      <div class="col-7">
+                          <div class="card-image">
+                              <img src="image/s6.png" alt="" class="card-img">
+                          </div>
+                      </div>
+                      <div class="col pt-4">
+                          <div class="row pb-3">
+                              <h3 class="modal-title" id="titlefont">Shaila O.</h3>
+                          </div>
+                          <div class="row py-2">
+                              <div class="rating ">
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                              </div>
+                          </div>
+                          <div class="row py-1">
+                              <p class="modal-subtile float-end">3/20/2023</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Modal body -->
+              <div class="modal-body">
+                  <div class="row">
+                      
+                      <div class="col">
+                        <h3>Cyber Security</h3>
+                          <p>course is well above expected. there are so many interesting things to learn, we get to learn right from basic to advanced. I had no prior knowledge about angular js when I started with the course, but now I am understanding the things very well.</p>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Modal footer -->
+              <div class="modal-footer">
+
+                  <div class="d-flex justify-content-center">
+                      <button type="button" class="close px-3 " id="cancelbtn" data-bs-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+    <!--feedback section-->
+    
+
+   
+
+  <section class="my-5 reveal py-2" id="ourteam">
+      <div class="container reveal" >
+          <h2 class="display-5 my-5 py-5 fw-bold text-center"><i>Our Team</i></h2>
+
+              <div class="row text-center">
+                      <div class="col-md">
+                          <img class="rounded-circle bg-warning shadow-lg p-3 mb-5"  src="image/russel.jpg" width="280" />
+                          <h4 class="fw-bold"><i>John Russel</i></h5>
+                          <h5 class="fw-bold text-warning">Front-End Developer</h5>
+                          <a href="#"><img src="image/icons8-facebook-50.png" width="30" alt="facebook"></a>
+                          <a href="#"><img src="image/icons8-twitter-50.png" width="30" alt="twitter"></a>
+                          <a href="#"><img src="image/icons8-linkedin-circled-50.png" width="30" alt="Linkedin"></a>
+                      </div>
+
+
+                      <div class="col-md">
+                          <img class="rounded-circle bg-warning shadow-lg p-3 mb-5"  src="image/jane.png"  width="280"/>
+                          <h4 class="fw-bold"><i>Daryl Jane</i></h5>
+                            <h5 class="fw-bold text-warning">Back-End End Developer</h5>
+                              <a href="#"><img src="image/icons8-facebook-50.png" width="30" alt="facebook"></a>
+                              <a href="#"><img src="image/icons8-twitter-50.png" width="30" alt="twitter"></a>
+                              <a href="#"><img src="image/icons8-linkedin-circled-50.png"  width="30" alt="Linkedin"></a>
+                      </div>
+
+
+
+                      <div class="col-md">
+                         <img class="rounded-circle bg-warning shadow-lg p-3 mb-5"  src="image/maamluz.JPG" width="280" height="280" />
+                         <h4 class="fw-bold"><i>Maam Luz</i></h5>
+                          <h5 class="fw-bold text-warning">UI/UX Designer</h5>
+                          <a href="#"><img src="image/icons8-facebook-50.png" width="30" alt="facebook"></a>
+                          <a href="#"><img src="image/icons8-twitter-50.png" width="30" alt="twitter"></a>
+                          <a href="#"><img src="image/icons8-linkedin-circled-50.png" width="30" alt="Linkedin"></a>
+                      </div>
+
+              
+                     
+              </div>
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8">
+                    <p class="text-muted text-center my-5 py-5">At WE-Learn, we're all learners and instructors. We live out our values 
+                      every day to create a culture that is diverse, inclusive, and committed to helping employees thrive.
+                      We're committed to improving lives through learning. Dig into our original research to learn about 
+                      the forces that are shaping the modern workplace</p>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+                          
+      </div>
+</section>
+
+
+
+  
+ 
+</div>     
+
+<!-- FOOTER START -->
+<section class="text-center reveal"  id="contact" style="background-color: #23242a;"> 
+
+<div class="container ">
+
+<footer class="text-white text-center text-lg-start" >
+
+  <div class="container p-4">
+
+    <div class="row mt-2">
+
+      <div class="col-lg-4 col-md-12 mb-0 mb-md-0">
+        <h5 class="title mb-2">ABOUT W<span class="text-warning">e</span>-L<span class="text-warning">e</span>arn</h5>
+
+        <p>
+          WE-Learn is the global online learning platform that offers anyone, anywhere access to online courses and degrees from world-class universities and companies.
+        </p>
+
+        
+
+        <div class="my-4">
+
+          <a type="button" class="btn btn-floating btn-warning btn-lg "><i class="fab fa-facebook-f"></i></a>
+
+          <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-linkedin-in"></i></i></a>
+
+          <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-twitter"></i></a>
+  
+          <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-google-plus-g"></i></a>
+
+        </div>
+      </div>
+
+
+
+      <div class="col-lg-4 col-md-6 mb-0 mb-md-0">
+        <h5 class="text-uppercase mb-2 pb-1">Subscribe to Newsletter</h5>
+        <form action="https://formbold.com/s/6lDv4" method="POST" >
+        <div class="form-outline form-white mb-4">
+          <div class="input-group">
+            <input type="email" name="Email" class="form-control" placeholder="Your Email" required>
+            <span class="input-group-btn">
+            <button class="btn btn-outline-warning" type="submit" onclick="clickAlert1()">Subscribe</button>
+            </span>
+             </div>
+         
+             </form>
+
+        <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 48.8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+        <ul class="fa-ul" style="margin-left: 1.65em;">
+          <li class="mb-1">
+            <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Philippines </span>
+          </li>
+          <li class="mb-1">
+            <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@welearn.com</span>
+          </li>
+          <li class="mb-1">
+            <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">0999999999</span>
+          </li>
+          <li class="mb-1">
+            <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">099999999</span>
+          </li>
+        </ul>
+      </div>
+
+
+
+      <div class="col-lg-4 col-md-6 mb-0 mb-md-0">
+        <h5 class="text-uppercase mb-2">Contact Us</h5>
+
+  
+        <form action="https://formbold.com/s/6lDv4" method="POST" >   
+            <input type="text" name="Fullname" class="form-control my-2" placeholder="Fullname" required>
+            <input type="email" name="Email" class="form-control" placeholder="Your Email" required>
+
+          <textarea class="form-control my-2" id="Message" name="Message" placeholder="Enter Message" rows="3" required></textarea>
+      
+          <button class="btn btn-outline-warning my-2" type="submit">Submit</button>
+     </form>
+  </div>
+</div>
+
+
+  </div>
+
+
+</footer>
+
+</div>
+
+    </section>
+
+<!--FOOTER END -->
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="js/count.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/addToCart.js"></script>
+<script src="bootstrap/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/cbc56ed82a.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"></script>
+
+    
+
+
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "116967281308716");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v16.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+</body>
+</html>
